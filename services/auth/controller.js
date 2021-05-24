@@ -17,7 +17,7 @@ class AuthController {
     login = async (req, res) => {
         try {
             let request = Object.assign({}, req.body);
-
+            console.log("Hey hey ");
             // If no username provided, Throw error.
             if (!request.email) throw new apiError.ValidationError('username', messages.EMAIL_REQUIRED);
             request.email = request.email.toLowerCase();
@@ -67,7 +67,7 @@ class AuthController {
             if (!details.name) throw new apiError.ValidationError('Full Name', messages.NAME_REQUIRED);
             if (!details.contactNumber) throw new apiError.ValidationError('Contact Number', messages.CONTACT_REQUIRED);
             // if (!details.reportingTL) throw new apiError.ValidationError('Reporting TL',messages.TL_REQUIRED);
-           if (!details.password) throw new apiError.ValidationError('Password', messages.PASSWORD_REQUIRED);
+            if (!details.password) throw new apiError.ValidationError('Password', messages.PASSWORD_REQUIRED);
 
             var salt = await bcrypt.genSaltSync(10);
             var hash = await bcrypt.hashSync(details.password, salt);

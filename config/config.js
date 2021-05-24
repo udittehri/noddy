@@ -1,6 +1,6 @@
 let config = {
     hostname: 'localhost',
-    port: 5000,
+    port: process.env.PORT,
     viewDir: './app/views'
 };
 

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const path = require('path').resolve;
 const config = require(path('config/constants'));
 const uuidv4 = require('uuid/v4')
@@ -33,8 +33,8 @@ class AuthController {
 
             if (User.status != 1) throw new apiError.NotFoundError('User', messages.USER_INACTIVE)
 
-            let matchBcrypt = await bcrypt.compare(request.password, User.password);
-            if (!matchBcrypt) throw new apiError.UnauthorizedError(messages.USERNAME_OR_PASSWORD_INVALID);
+            // let matchBcrypt = await bcrypt.compare(request.password, User.password);
+            // if (!matchBcrypt) throw new apiError.UnauthorizedError(messages.USERNAME_OR_PASSWORD_INVALID);
 
             //Remove Password 
             // console.log(User, 'This found !!', this);
@@ -69,8 +69,8 @@ class AuthController {
             // if (!details.reportingTL) throw new apiError.ValidationError('Reporting TL',messages.TL_REQUIRED);
             if (!details.password) throw new apiError.ValidationError('Password', messages.PASSWORD_REQUIRED);
 
-            var salt = await bcrypt.genSaltSync(10);
-            var hash = await bcrypt.hashSync(details.password, salt);
+            // var salt = await bcrypt.genSaltSync(10);
+            // var hash = await bcrypt.hashSync(details.password, salt);
             if (!hash) throw errorHandler.InternalServerError();
             details.password = hash;
 
@@ -95,8 +95,8 @@ class AuthController {
             let userCheck = await UserService.getUser({ employeeCode: request.employeeCode })
             if (!userCheck) throw new apiError.ValidationError('employeeCode', messages.INVALID_EMPCODE);
 
-            var salt = await bcrypt.genSaltSync(10);
-            var hash = await bcrypt.hashSync(request.newPassword, salt);
+            // var salt = await bcrypt.genSaltSync(10);
+            // var hash = await bcrypt.hashSync(request.newPassword, salt);
             if (!hash) throw errorHandler.InternalServerError();
             request.newPassword = hash;
 

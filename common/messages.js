@@ -10,7 +10,7 @@ module.exports = {
     USERNAME_OR_PASSWORD_INVALID: 'Username or Password is invalid',
     PASSWORD_INVALID: 'Password is invalid',
     OTP_REQUIRED: 'OTP is a required field.',
-    USER_ID_REQUIRED: 'User Id is a required field',
+
     ID_INVALID: 'Id is invalid',
     STATUS_REQUIRED: 'Status is a required field',
     CONTACT_REQUIRED: 'Contact number is a required field.',
@@ -24,7 +24,17 @@ module.exports = {
     ADDRESS_ID_REQUIRED: 'Address Id is a required field',
     ADDRESS_ID_INVALID: 'Address Id is invalid',
 
-    ALL_REQUIRED: 'All fields are required'
+    ALL_REQUIRED: 'All fields are required',
+    //USER
+    USER_ID_REQUIRED: 'User Id is a required field',
+
+    // Product 
+    PRODUCT_NAME_REQUIRED: 'Product name is required',
+    PRODUCT_ID_REQUIRED: 'Product id is required',
+    PRODUCT_EXISTS: 'Product already exist',
+    NO_PRODUCT: 'Product does not exist'
+
+
 
 
 }

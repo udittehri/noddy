@@ -116,6 +116,7 @@ class AuthController {
             if (request.name) throw new apiError.ValidationError('productName', messages.PRODUCT_NAME_REQUIRED);
             if (request.userId) throw new apiError.ValidationError('productName', messages.USER_ID_REQUIRED);
 
+
             let criteria = {
                 userId: request.userId,
                 name: request.name
